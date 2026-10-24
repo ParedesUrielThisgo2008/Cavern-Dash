@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://c56gimpxaksal"]
+
+[ext_resource type="PackedScene" uid="uid://bs2t16bh4mq7x" path="res://Scenes/Entidades/Jugador.tscn" id="1_yco5e"]
+[ext_resource type="PackedScene" uid="uid://cm062phea6abi" path="res://Scenes/Entidades/camarilla.tscn" id="2_2260h"]
+[ext_resource type="Script" uid="uid://dlkvh76x27i1f" path="res://Script/interfaz.gd" id="3_x7ibj"]
+[ext_resource type="PackedScene" uid="uid://bxrk7g5d24n0" path="res://Scenes/UI/MenuPausa.tscn" id="4_0x2n2"]
+[ext_resource type="Texture2D" uid="uid://bqx1nibdiaol6" path="res://Imagenes/Corazon.png" id="5_jtsaq"]
+[ext_resource type="Script" uid="uid://dsm2m01pxrx2d" path="res://Script/contadores.gd" id="6_1lvlg"]
+[ext_resource type="FontFile" uid="uid://b367py5dtmh1r" path="res://fuente/Silkscreen-Regular.ttf" id="7_ophry"]
+[ext_resource type="Script" uid="uid://cx7jan12ei2d0" path="res://Script/mini_mapa.gd" id="8_aqkmv"]
+[ext_resource type="Script" uid="uid://ckta6i88vnu3n" path="res://Script/limite_caida.gd" id="9_1lvlg"]
+[ext_resource type="PackedScene" uid="uid://f1wh1f7bq6p8" path="res://Scenes/Entidades/Llave.tscn" id="10_ophry"]
+[ext_resource type="PackedScene" uid="uid://dnk062prm82yj" path="res://Scenes/Entidades/salida.tscn" id="11_aqkmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lvlg"]
+size = Vector2(85.25, 73.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5jrm"]
+size = Vector2(83, 76.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xekx"]
+size = Vector2(83.5, 72.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2iii"]
+size = Vector2(802.5, 149.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q22fj"]
+size = Vector2(327, 246)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfm3l"]
+size = Vector2(26431, 2412)
+
+[node name="Nivel_2" type="Node2D" unique_id=1532416344]
+
+[node name="Jugador" parent="." unique_id=624608330 instance=ExtResource("1_yco5e")]
+
+[node name="Camera2D" parent="Jugador" unique_id=1596161595 instance=ExtResource("2_2260h")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1388593852]
+position = Vector2(-1, 0)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=506826505]
+position = Vector2(-115.5188, -28.964695)
+scale = Vector2(3.4518678, 2.2095582)
+polygon = PackedVector2Array(184, 114, 183.52928, -358.0061, 117.188385, -358.0061, 118.2088, 46.184387, -164, 47, -164, 114)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=284515509]
+position = Vector2(28, -110)
+polygon = PackedVector2Array(-1073, -160, -1073, -69, -643, -69, -643, -160)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1645874390]
+position = Vector2(989, -244)
+scale = Vector2(1, 0.710041)
+polygon = PackedVector2Array(-1127, -440.00436, -1130, -562.0044, -1597, -562.0044, -1597, -440.00436)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1458128349]
+position = Vector2(1498, 1277)
+scale = Vector2(1.5178571, 2.3663204)
+polygon = PackedVector2Array(-530.353, -886.60864, -530.353, -811.38635, 784, -812, 784, -884, 324.9649, -884.04755, 325.20706, -1056.0415, 768.8471, -1056.0701, 768.84717, -1122.2351, 1925.0825, -1122.4177, 1925.0825, -1234.8286, 1209.6001, -1235.2512, 1209.6001, -1594.8813, 1044.8943, -1594.8813, 1044.8943, -1377.6664, 945.4118, -1377.2438, 945.4118, -1296.5278, 768.8471, -1296.5278, 768.8471, -1235.2512, 158.11761, -1234.8286, 158.11761, -886.60864)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=199295253]
+position = Vector2(1097, -975)
+shape = SubResource("RectangleShape2D_1lvlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=613313653]
+position = Vector2(901, -1290)
+shape = SubResource("RectangleShape2D_b5jrm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1818844065]
+position = Vector2(1187.25, -1555.8125)
+shape = SubResource("RectangleShape2D_3xekx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=128575131]
+position = Vector2(4197, -554)
+shape = SubResource("RectangleShape2D_h2iii")
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=608826434]
+polygon = PackedVector2Array(1326, -2797, 1326, -2608, 2411, -2607, 2411, -2306, 2691, -2306, 2692, -2797, 2189.6072, -2797.0005, 2190, -2928, 1956, -2928, 1955.6812, -2797.0002)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1024257310]
+polygon = PackedVector2Array(48, -3352, 48, -2734, 609, -2734, 608.85986, -2884.2048, 1300, -2885, 1300, -3013, 608.73914, -3013.7073, 608.55615, -3210.0005, 1465, -3210, 1457, -3352)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=188649771]
+position = Vector2(-0.9997558, -764.2114)
+scale = Vector2(0.99999994, 0.7428715)
+polygon = PackedVector2Array(4254, -2859, 4254, -2482, 6185, -2482, 6185, -2859, 4941.765, -2859, 4943, -3023.1182, 4755, -3023.1182, 4756.759, -2859)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1524371327]
+polygon = PackedVector2Array(5185, -3256, 5185, -3381, 5481.64, -3381.0002, 5482, -3537, 5816, -3537, 5819, -3256)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=903550067]
+position = Vector2(5031, -1086)
+shape = SubResource("RectangleShape2D_q22fj")
+
+[node name="Interfaz" type="CanvasLayer" parent="." unique_id=1437892324 groups=["interfaz"]]
+script = ExtResource("3_x7ibj")
+
+[node name="MenuPausa" parent="Interfaz" unique_id=1776859001 instance=ExtResource("4_0x2n2")]
+
+[node name="Corazones" type="HBoxContainer" parent="Interfaz" unique_id=1289426450]
+offset_right = 266.0
+offset_bottom = 50.0
+
+[node name="Corazon1" type="TextureRect" parent="Interfaz/Corazones" unique_id=48999539]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("5_jtsaq")
+expand_mode = 1
+
+[node name="Corazon2" type="TextureRect" parent="Interfaz/Corazones" unique_id=164743914]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_jtsaq")
+expand_mode = 1
+
+[node name="Corazon3" type="TextureRect" parent="Interfaz/Corazones" unique_id=1417964402]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_jtsaq")
+expand_mode = 1
+
+[node name="Corazon4" type="TextureRect" parent="Interfaz/Corazones" unique_id=1952551067]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_jtsaq")
+expand_mode = 1
+
+[node name="Corazon5" type="TextureRect" parent="Interfaz/Corazones" unique_id=1368543065]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_jtsaq")
+expand_mode = 1
+
+[node name="Contadores" type="Control" parent="Interfaz" unique_id=65209460]
+layout_mode = 3
+anchor_bottom = 0.169
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 197.0
+offset_bottom = -7.512001
+script = ExtResource("6_1lvlg")
+
+[node name="LabelCristales" type="Label" parent="Interfaz/Contadores" unique_id=1502494163]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("7_ophry")
+theme_override_font_sizes/font_size = 25
+text = "cristales 0/10"
+
+[node name="LabelLlaves" type="Label" parent="Interfaz/Contadores" unique_id=1887344903]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 176.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("7_ophry")
+theme_override_font_sizes/font_size = 25
+text = "llaves 0/2"
+
+[node name="MiniMapa" type="Control" parent="Interfaz/Contadores" unique_id=756924241 node_paths=PackedStringArray("jugador")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 767.0
+offset_top = -48.0
+offset_right = 953.0
+offset_bottom = 79.0
+grow_horizontal = 0
+script = ExtResource("8_aqkmv")
+jugador = NodePath("../../../Jugador")
+metadata/_edit_use_anchors_ = true
+
+[node name="PuntoJugador" type="ColorRect" parent="Interfaz/Contadores/MiniMapa" unique_id=116214602]
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.76025516, 0, 0.0067841257, 1)
+
+[node name="VistaMapa" type="SubViewportContainer" parent="Interfaz/Contadores/MiniMapa" unique_id=2050594335]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 120.0
+
+[node name="SubViewport" type="SubViewport" parent="Interfaz/Contadores/MiniMapa/VistaMapa" unique_id=1786514622]
+handle_input_locally = false
+size = Vector2i(180, 120)
+render_target_update_mode = 4
+
+[node name="CamaraMinimapa" type="Camera2D" parent="Interfaz/Contadores/MiniMapa/VistaMapa/SubViewport" unique_id=1793032328]
+position = Vector2(-961, 0)
+
+[node name="LimiteCaida" type="Area2D" parent="." unique_id=1768986281]
+position = Vector2(2, 6)
+collision_layer = 32
+script = ExtResource("9_1lvlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimiteCaida" unique_id=1552224611]
+visible = false
+position = Vector2(10, 2191)
+shape = SubResource("RectangleShape2D_hfm3l")
+
+[node name="Llaves" type="Node2D" parent="." unique_id=1116339231]
+position = Vector2(2, 6)
+
+[node name="Llave" parent="Llaves" unique_id=382785445 instance=ExtResource("10_ophry")]
+position = Vector2(163, -3500.9998)
+scale = Vector2(0.1, 0.1)
+
+[node name="Llave2" parent="Llaves" unique_id=1460801840 instance=ExtResource("10_ophry")]
+position = Vector2(2127.0002, -886.00006)
+scale = Vector2(0.1, 0.1)
+
+[node name="Salida" parent="." unique_id=54096327 instance=ExtResource("11_aqkmv")]
+position = Vector2(5738, -3618)
+nivel_a_desbloquear = 3

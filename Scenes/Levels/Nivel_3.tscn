@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://c0r7x1xi04iyy"]
+
+[ext_resource type="PackedScene" uid="uid://bs2t16bh4mq7x" path="res://Scenes/Entidades/Jugador.tscn" id="1_mdl74"]
+[ext_resource type="PackedScene" uid="uid://cm062phea6abi" path="res://Scenes/Entidades/camarilla.tscn" id="2_t0q0a"]
+[ext_resource type="Script" uid="uid://dlkvh76x27i1f" path="res://Script/interfaz.gd" id="3_ldqek"]
+[ext_resource type="PackedScene" uid="uid://bxrk7g5d24n0" path="res://Scenes/UI/MenuPausa.tscn" id="4_v78a5"]
+[ext_resource type="Texture2D" uid="uid://bqx1nibdiaol6" path="res://Imagenes/Corazon.png" id="5_ty8vm"]
+[ext_resource type="Script" uid="uid://dsm2m01pxrx2d" path="res://Script/contadores.gd" id="6_qg5p6"]
+[ext_resource type="FontFile" uid="uid://b367py5dtmh1r" path="res://fuente/Silkscreen-Regular.ttf" id="7_rtb3o"]
+[ext_resource type="Script" uid="uid://cx7jan12ei2d0" path="res://Script/mini_mapa.gd" id="8_7j0ol"]
+
+[node name="Nivel_3" type="Node2D" unique_id=708246806]
+
+[node name="Jugador" parent="." unique_id=624608330 instance=ExtResource("1_mdl74")]
+
+[node name="Camera2D" parent="Jugador" unique_id=1596161595 instance=ExtResource("2_t0q0a")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1764904750]
+position = Vector2(-1, 0)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=416020022]
+position = Vector2(-24.124321, 2.0000134)
+scale = Vector2(1.8624282, 0.9999996)
+polygon = PackedVector2Array(184, 114, 182, 46, -164, 47, -164, 114)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=147127446]
+polygon = PackedVector2Array(-1073, -160, -1073, -69, -643, -69, -643, -160)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2141343490]
+position = Vector2(0, -67.9664)
+scale = Vector2(1, 0.710041)
+polygon = PackedVector2Array(-1127, -440.00436, -1130, -562.0044, -1597, -562.0044, -1597, -440.00436)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1862876885]
+position = Vector2(241.74979, 1079.9397)
+scale = Vector2(1.5178571, 2.3663204)
+polygon = PackedVector2Array(-641, -884, -644, -812, 784, -812, 784, -884, 324.9649, -884.04755, 324.9649, -1145.2125, 157.62367, -1145.2125, 157.62367, -884.04755, -88.26404, -883.99994, -88.11752, -1035.3373, -189.57635, -1035.3373, -189.57983, -883.99994)
+
+[node name="Interfaz" type="CanvasLayer" parent="." unique_id=1361687637 groups=["interfaz"]]
+script = ExtResource("3_ldqek")
+
+[node name="MenuPausa" parent="Interfaz" unique_id=1776859001 instance=ExtResource("4_v78a5")]
+
+[node name="Corazones" type="HBoxContainer" parent="Interfaz" unique_id=2110115792]
+offset_right = 266.0
+offset_bottom = 50.0
+
+[node name="Corazon1" type="TextureRect" parent="Interfaz/Corazones" unique_id=1376163829]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("5_ty8vm")
+expand_mode = 1
+
+[node name="Corazon2" type="TextureRect" parent="Interfaz/Corazones" unique_id=1054757314]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_ty8vm")
+expand_mode = 1
+
+[node name="Corazon3" type="TextureRect" parent="Interfaz/Corazones" unique_id=2109574749]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_ty8vm")
+expand_mode = 1
+
+[node name="Corazon4" type="TextureRect" parent="Interfaz/Corazones" unique_id=2114307234]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_ty8vm")
+expand_mode = 1
+
+[node name="Corazon5" type="TextureRect" parent="Interfaz/Corazones" unique_id=1287175633]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("5_ty8vm")
+expand_mode = 1
+
+[node name="Contadores" type="Control" parent="Interfaz" unique_id=717681041]
+layout_mode = 3
+anchor_bottom = 0.169
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 197.0
+offset_bottom = -7.512001
+script = ExtResource("6_qg5p6")
+
+[node name="LabelCristales" type="Label" parent="Interfaz/Contadores" unique_id=1469507373]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("7_rtb3o")
+theme_override_font_sizes/font_size = 25
+text = "cristales 0/10"
+
+[node name="LabelLlaves" type="Label" parent="Interfaz/Contadores" unique_id=1043145992]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 176.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("7_rtb3o")
+theme_override_font_sizes/font_size = 25
+text = "llaves 0/2"
+
+[node name="MiniMapa" type="Control" parent="Interfaz/Contadores" unique_id=457986299 node_paths=PackedStringArray("jugador")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 767.0
+offset_top = -48.0
+offset_right = 953.0
+offset_bottom = 79.0
+grow_horizontal = 0
+script = ExtResource("8_7j0ol")
+jugador = NodePath("../../../Jugador")
+metadata/_edit_use_anchors_ = true
+
+[node name="PuntoJugador" type="ColorRect" parent="Interfaz/Contadores/MiniMapa" unique_id=2101049839]
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.76025516, 0, 0.0067841257, 1)
+
+[node name="VistaMapa" type="SubViewportContainer" parent="Interfaz/Contadores/MiniMapa" unique_id=818402916]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 120.0
+
+[node name="SubViewport" type="SubViewport" parent="Interfaz/Contadores/MiniMapa/VistaMapa" unique_id=158310099]
+handle_input_locally = false
+size = Vector2i(180, 120)
+render_target_update_mode = 4
+
+[node name="CamaraMinimapa" type="Camera2D" parent="Interfaz/Contadores/MiniMapa/VistaMapa/SubViewport" unique_id=337445916]
+position = Vector2(-961, 0)

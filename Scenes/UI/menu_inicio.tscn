@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://yehiug3ws3e1"]
+
+[ext_resource type="Script" uid="uid://cjbb2tuegk6ri" path="res://Script/menu_inicio.gd" id="1_h8kkd"]
+[ext_resource type="Texture2D" uid="uid://bhpbkq4dbmeby" path="res://Imagenes/Fondo_inicio.png" id="2_32rtn"]
+[ext_resource type="FontFile" uid="uid://b367py5dtmh1r" path="res://fuente/Silkscreen-Regular.ttf" id="3_fok73"]
+[ext_resource type="FontFile" uid="uid://d3l2q6rie48od" path="res://fuente/Silkscreen-Bold.ttf" id="5_xm8kv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4h5l"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryjsk"]
+bg_color = Color(0.039215688, 0.023529412, 0.023529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8kkd"]
+bg_color = Color(0.019607844, 0.007843138, 0.007843138, 1)
+
+[node name="MenuInicio" type="Control" unique_id=350111484]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8kkd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=492313940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1341776323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_32rtn")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=896689976]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36600003
+anchor_top = 0.257
+anchor_right = 0.634
+anchor_bottom = 0.74300003
+offset_left = 45.61798
+offset_top = 44.464005
+offset_right = -45.61798
+offset_bottom = -44.46402
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1596564381]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_fok73")
+theme_override_font_sizes/font_size = 45
+text = "CAVERN DASH"
+
+[node name="BotonJugar" type="Button" parent="VBoxContainer" unique_id=1363869155]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xm8kv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4h5l")
+text = "JUGAR"
+
+[node name="BotonOpciones" type="Button" parent="VBoxContainer" unique_id=1589445679]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xm8kv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ryjsk")
+text = "OPCIONES"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer" unique_id=1138911349]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xm8kv")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_h8kkd")
+text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonOpciones" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]

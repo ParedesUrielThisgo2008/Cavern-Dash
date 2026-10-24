@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bs2t16bh4mq7x"]
+
+[ext_resource type="Script" uid="uid://w8qd4t1bkyno" path="res://Script/jugador.gd" id="1_5jqxn"]
+[ext_resource type="Texture2D" uid="uid://b6bi8w1jegytk" path="res://Assets/icon.svg" id="1_mo433"]
+[ext_resource type="Script" uid="uid://53cbu8dr3vsb" path="res://Estados/idle.gd" id="2_5jqxn"]
+[ext_resource type="Script" uid="uid://d3k2hc5acxm7k" path="res://Estados/maquina_estados.gd" id="2_m531v"]
+[ext_resource type="Script" uid="uid://bldncxxwt8wvm" path="res://Estados/caminar.gd" id="3_na3lr"]
+[ext_resource type="Script" uid="uid://be2x03ewrh3cr" path="res://Estados/saltar.gd" id="4_es7oc"]
+[ext_resource type="Script" uid="uid://daxabuxrfrve8" path="res://Estados/agacharse.gd" id="5_e13yb"]
+[ext_resource type="Script" uid="uid://btxaspyqtyhae" path="res://Estados/caer.gd" id="8_t7e7s"]
+[ext_resource type="Script" uid="uid://wjunq5jluh2y" path="res://Estados/dash.gd" id="9_p6dce"]
+[ext_resource type="Script" uid="uid://bpkpvju46ffbw" path="res://Estados/salto_pared.gd" id="10_xmgb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfvk3"]
+size = Vector2(63, 52.0625)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=624608330 groups=["jugador"]]
+collision_mask = 26
+script = ExtResource("1_5jqxn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1259790958]
+position = Vector2(-4, -4)
+scale = Vector2(0.519531, 0.523438)
+texture = ExtResource("1_mo433")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028327657 groups=["jugador"]]
+visible = false
+position = Vector2(-3.5, 2.03125)
+shape = SubResource("RectangleShape2D_pfvk3")
+
+[node name="MaquinaEstados" type="Node" parent="." unique_id=651645168]
+script = ExtResource("2_m531v")
+
+[node name="idle" type="Node" parent="MaquinaEstados" unique_id=1705214906]
+script = ExtResource("2_5jqxn")
+
+[node name="caminar" type="Node" parent="MaquinaEstados" unique_id=1795590322]
+script = ExtResource("3_na3lr")
+
+[node name="saltar" type="Node" parent="MaquinaEstados" unique_id=1128120234]
+script = ExtResource("4_es7oc")
+
+[node name="agacharse" type="Node" parent="MaquinaEstados" unique_id=2073971701]
+script = ExtResource("5_e13yb")
+
+[node name="caer" type="Node" parent="MaquinaEstados" unique_id=1467361489]
+script = ExtResource("8_t7e7s")
+
+[node name="dash" type="Node" parent="MaquinaEstados" unique_id=668691045]
+script = ExtResource("9_p6dce")
+
+[node name="salto_pared" type="Node" parent="MaquinaEstados" unique_id=412813978]
+script = ExtResource("10_xmgb7")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1174380363]

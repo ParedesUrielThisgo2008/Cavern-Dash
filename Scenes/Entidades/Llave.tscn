@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://f1wh1f7bq6p8"]
+
+[ext_resource type="Script" uid="uid://drgcom33tx3hq" path="res://Script/llave.gd" id="1_wwvtw"]
+[ext_resource type="Texture2D" uid="uid://cfv6i3e5mrm5p" path="res://Imagenes/Llave.png" id="2_wwvtw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5jrm"]
+radius = 88.0
+height = 590.0
+
+[node name="Llave" type="Area2D" unique_id=382785445]
+collision_layer = 16
+script = ExtResource("1_wwvtw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=44915569]
+position = Vector2(3, 5)
+scale = Vector2(0.45458984, 0.41259763)
+texture = ExtResource("2_wwvtw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=660359262]
+visible = false
+shape = SubResource("CapsuleShape2D_b5jrm")

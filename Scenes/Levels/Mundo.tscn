@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://dgyj1d88tcpbm"]
+
+[ext_resource type="PackedScene" uid="uid://bs2t16bh4mq7x" path="res://Scenes/Entidades/Jugador.tscn" id="1_4fr7h"]
+[ext_resource type="PackedScene" uid="uid://duemnp1kbypl0" path="res://Scenes/Entidades/suelo.tscn" id="2_jvpnq"]
+[ext_resource type="PackedScene" uid="uid://cm062phea6abi" path="res://Scenes/Entidades/camarilla.tscn" id="3_v2lyq"]
+[ext_resource type="Script" uid="uid://dlkvh76x27i1f" path="res://Script/interfaz.gd" id="4_pne84"]
+[ext_resource type="PackedScene" uid="uid://bxrk7g5d24n0" path="res://Scenes/UI/MenuPausa.tscn" id="6_dq4oj"]
+[ext_resource type="Texture2D" uid="uid://bqx1nibdiaol6" path="res://Imagenes/Corazon.png" id="6_ua1ij"]
+[ext_resource type="Script" uid="uid://cx7jan12ei2d0" path="res://Script/mini_mapa.gd" id="7_2hhwh"]
+[ext_resource type="PackedScene" uid="uid://b5tshcmd4pcil" path="res://Scenes/Entidades/enemigo.tscn" id="8_57iff"]
+[ext_resource type="Script" uid="uid://dsm2m01pxrx2d" path="res://Script/contadores.gd" id="8_xk7c1"]
+[ext_resource type="FontFile" uid="uid://b367py5dtmh1r" path="res://fuente/Silkscreen-Regular.ttf" id="9_ua1ij"]
+[ext_resource type="PackedScene" uid="uid://bw8bkieu5ciqa" path="res://Scenes/Entidades/Cristales.tscn" id="10_cmwhr"]
+[ext_resource type="PackedScene" uid="uid://f1wh1f7bq6p8" path="res://Scenes/Entidades/Llave.tscn" id="12_w8oxd"]
+[ext_resource type="PackedScene" uid="uid://dnk062prm82yj" path="res://Scenes/Entidades/salida.tscn" id="13_ua1ij"]
+[ext_resource type="Script" uid="uid://ckta6i88vnu3n" path="res://Script/limite_caida.gd" id="14_y7jxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5jrm"]
+size = Vector2(26431, 2412)
+
+[node name="NivelTutorial" type="Node2D" unique_id=1647655499]
+
+[node name="Jugador" parent="." unique_id=624608330 instance=ExtResource("1_4fr7h")]
+position = Vector2(1586, 1645)
+
+[node name="Camera2D" parent="Jugador" unique_id=1596161595 instance=ExtResource("3_v2lyq")]
+
+[node name="suelo" parent="." unique_id=1290198292 instance=ExtResource("2_jvpnq")]
+position = Vector2(-58, 531)
+
+[node name="Interfaz" type="CanvasLayer" parent="." unique_id=1765530180 groups=["interfaz_vida"]]
+script = ExtResource("4_pne84")
+
+[node name="MenuPausa" parent="Interfaz" unique_id=1776859001 instance=ExtResource("6_dq4oj")]
+offset_left = 2.0
+offset_top = -18.0
+offset_right = 2.0
+offset_bottom = 6.0
+
+[node name="Corazones" type="HBoxContainer" parent="Interfaz" unique_id=727607175]
+offset_right = 282.0
+offset_bottom = 50.0
+offset_transform_enabled = true
+theme_override_constants/separation = 8
+
+[node name="Corazon1" type="TextureRect" parent="Interfaz/Corazones" unique_id=120805661]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("6_ua1ij")
+expand_mode = 1
+
+[node name="Corazon2" type="TextureRect" parent="Interfaz/Corazones" unique_id=1236993654]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("6_ua1ij")
+expand_mode = 1
+
+[node name="Corazon3" type="TextureRect" parent="Interfaz/Corazones" unique_id=953036920]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("6_ua1ij")
+expand_mode = 1
+
+[node name="Corazon4" type="TextureRect" parent="Interfaz/Corazones" unique_id=1328870356]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("6_ua1ij")
+expand_mode = 1
+
+[node name="Corazon5" type="TextureRect" parent="Interfaz/Corazones" unique_id=543434296]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("6_ua1ij")
+expand_mode = 1
+
+[node name="Contadores" type="Control" parent="Interfaz" unique_id=366291958]
+layout_mode = 3
+anchor_bottom = 0.169
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 289.0
+offset_bottom = 28.487999
+script = ExtResource("8_xk7c1")
+
+[node name="LabelCristales" type="Label" parent="Interfaz/Contadores" unique_id=1468848521]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 244.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("9_ua1ij")
+theme_override_font_sizes/font_size = 25
+text = "Cristales 0/10"
+
+[node name="LabelLlaves" type="Label" parent="Interfaz/Contadores" unique_id=1865240853]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 48.0
+offset_right = 186.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("9_ua1ij")
+theme_override_font_sizes/font_size = 25
+text = "Llaves 0/2"
+
+[node name="MiniMapa" type="Control" parent="Interfaz/Contadores" unique_id=1589104751 node_paths=PackedStringArray("jugador")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 679.0
+offset_top = -48.0
+offset_right = 865.0
+offset_bottom = 79.0
+grow_horizontal = 0
+script = ExtResource("7_2hhwh")
+jugador = NodePath("../../../Jugador")
+
+[node name="PuntoJugador" type="ColorRect" parent="Interfaz/Contadores/MiniMapa" unique_id=275977392]
+visible = false
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(1, 0.039215688, 0.039215688, 1)
+
+[node name="VistaMapa" type="SubViewportContainer" parent="Interfaz/Contadores/MiniMapa" unique_id=1932008343]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 188.0
+offset_bottom = 124.0
+
+[node name="SubViewport" type="SubViewport" parent="Interfaz/Contadores/MiniMapa/VistaMapa" unique_id=1604654637]
+handle_input_locally = false
+size = Vector2i(180, 120)
+render_target_update_mode = 4
+
+[node name="CamaraMinimapa" type="Camera2D" parent="Interfaz/Contadores/MiniMapa/VistaMapa/SubViewport" unique_id=781780912]
+position = Vector2(-963, 0)
+zoom = Vector2(0.1, 0.1)
+
+[node name="Enemigo" parent="." unique_id=432612501 instance=ExtResource("8_57iff")]
+position = Vector2(1829, -2315)
+
+[node name="Cristales" type="Node2D" parent="." unique_id=1617578966]
+
+[node name="Cristal" parent="Cristales" unique_id=694635315 instance=ExtResource("10_cmwhr")]
+position = Vector2(-973, 1702.0001)
+scale = Vector2(0.3, 0.3)
+
+[node name="Cristal2" parent="Cristales" unique_id=1034260926 instance=ExtResource("10_cmwhr")]
+position = Vector2(-3774, 538)
+scale = Vector2(0.3, 0.3)
+
+[node name="Cristal3" parent="Cristales" unique_id=1755129354 instance=ExtResource("10_cmwhr")]
+position = Vector2(-3022, -49)
+scale = Vector2(0.3, 0.3)
+
+[node name="Cristal4" parent="Cristales" unique_id=2100118446 instance=ExtResource("10_cmwhr")]
+position = Vector2(-1740, -335)
+scale = Vector2(0.3, 0.3)
+
+[node name="Cristal5" parent="Cristales" unique_id=648133549 instance=ExtResource("10_cmwhr")]
+position = Vector2(1845.0001, -668)
+scale = Vector2(0.3, 0.3)
+
+[node name="Cristal6" parent="Cristales" unique_id=921779897 instance=ExtResource("10_cmwhr")]
+position = Vector2(591, -623)
+scale = Vector2(0.3, 0.3)
+
+[node name="Llaves" type="Node2D" parent="." unique_id=307363907]
+position = Vector2(0, 10)
+
+[node name="Llave" parent="Llaves" unique_id=382785445 instance=ExtResource("12_w8oxd")]
+position = Vector2(-9496, -1902)
+scale = Vector2(0.15, 0.15)
+
+[node name="Llave2" parent="Llaves" unique_id=83893882 instance=ExtResource("12_w8oxd")]
+position = Vector2(10681, -2240)
+scale = Vector2(0.15, 0.15)
+
+[node name="Salida" parent="Llaves" unique_id=54096327 instance=ExtResource("13_ua1ij")]
+position = Vector2(9169, -4078)
+collision_layer = 32
+nivel_a_desbloquear = 1
+
+[node name="LimiteCaida" type="Area2D" parent="." unique_id=31221223]
+collision_layer = 8
+script = ExtResource("14_y7jxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimiteCaida" unique_id=1589807916]
+visible = false
+position = Vector2(1600.5, 4582)
+shape = SubResource("RectangleShape2D_b5jrm")

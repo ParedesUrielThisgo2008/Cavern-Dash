@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bw8bkieu5ciqa"]
+
+[ext_resource type="Script" uid="uid://m6uthwonkhcd" path="res://Script/cristales.gd" id="1_wja6u"]
+[ext_resource type="Texture2D" uid="uid://crrmlbf50dpua" path="res://Imagenes/Cristal.png" id="2_wja6u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5jrm"]
+radius = 55.0
+height = 184.0
+
+[node name="Cristales" type="Area2D" unique_id=694635315]
+collision_layer = 8
+script = ExtResource("1_wja6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1024494726]
+position = Vector2(4.9999695, -10.62499)
+scale = Vector2(0.19677737, 0.18029785)
+texture = ExtResource("2_wja6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1029836275]
+visible = false
+position = Vector2(4, 0)
+shape = SubResource("CapsuleShape2D_b5jrm")

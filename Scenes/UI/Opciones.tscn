@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://3vs17vhuwpwq"]
+
+[ext_resource type="Script" uid="uid://csalarjgje3qc" path="res://Script/opciones.gd" id="1_2nry1"]
+[ext_resource type="Texture2D" uid="uid://bhpbkq4dbmeby" path="res://Imagenes/Fondo_inicio.png" id="2_xjga3"]
+[ext_resource type="FontFile" uid="uid://d3l2q6rie48od" path="res://fuente/Silkscreen-Bold.ttf" id="3_knh8s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4h5l"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ryjsk"]
+bg_color = Color(0.039215688, 0.023529412, 0.023529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8kkd"]
+bg_color = Color(0.019607844, 0.007843138, 0.007843138, 1)
+
+[node name="Opciones" type="Control" unique_id=350111484]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2nry1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=492313940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1341776323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xjga3")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=896689976]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.30800003
+anchor_right = 0.61200005
+anchor_bottom = 0.69200003
+offset_left = 20.273987
+offset_top = 11.415985
+offset_right = -20.274048
+offset_bottom = -11.416016
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="BotonVolumen" type="Button" parent="VBoxContainer" unique_id=1363869155]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_knh8s")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4h5l")
+text = "VOLUMEN"
+
+[node name="BotonResolucion" type="Button" parent="VBoxContainer" unique_id=1589445679]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_knh8s")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ryjsk")
+text = "RESOLUCION"
+
+[node name="BotonAtras" type="Button" parent="VBoxContainer" unique_id=1138911349]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_knh8s")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_h8kkd")
+text = "ATRAS"
+
+[connection signal="pressed" from="VBoxContainer/BotonVolumen" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonResolucion" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonAtras" to="." method="_on_boton_atras_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonAtras" to="." method="_on_boton_salir_pressed"]

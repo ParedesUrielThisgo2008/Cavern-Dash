@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b5tshcmd4pcil"]
+
+[ext_resource type="Script" uid="uid://5w2n8t7eoxi2" path="res://Scenes/enemigo.gd" id="1_mwaop"]
+[ext_resource type="Texture2D" uid="uid://b6bi8w1jegytk" path="res://icon.svg" id="2_t4vig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5jrm"]
+size = Vector2(127, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2iii"]
+radius = 1024.0
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=432612501]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_mwaop")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=988142755]
+texture = ExtResource("2_t4vig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=931483365]
+visible = false
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_b5jrm")
+
+[node name="RangoDeteccion" type="Area2D" parent="." unique_id=1041259772]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangoDeteccion" unique_id=2088995203]
+shape = SubResource("CircleShape2D_h2iii")
+debug_color = Color(0.90423936, 0.15140212, 0.24664223, 0.41960785)
+
+[connection signal="body_entered" from="RangoDeteccion" to="." method="_on_rango_deteccion_body_entered"]

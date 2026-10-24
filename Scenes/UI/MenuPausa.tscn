@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bxrk7g5d24n0"]
+
+[ext_resource type="Script" uid="uid://dcdqjeewx8hh5" path="res://Script/menu_pausa.gd" id="1_ijvk6"]
+[ext_resource type="FontFile" uid="uid://b367py5dtmh1r" path="res://fuente/Silkscreen-Regular.ttf" id="2_klopj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijvk6"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xekx"]
+bg_color = Color(0.019607844, 0.019607844, 0.019607844, 1)
+
+[node name="MenuPausa" type="Control" unique_id=1776859001]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijvk6")
+
+[node name="Panel" type="Panel" parent="." unique_id=227717341]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=145922158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -95.0
+offset_right = 151.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ijvk6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1064551011]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="BotonContinuar" type="Button" parent="PanelContainer/VBoxContainer" unique_id=645887028]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klopj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xekx")
+text = "CONTINUAR"
+
+[node name="BotonReiniciar" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1118800676]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klopj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xekx")
+text = "REINICIAR"
+
+[node name="BotonMenuPrincipal" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1879229229]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_klopj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xekx")
+text = "MENU PRINCIPAL"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BotonContinuar" to="." method="_on_boton_continuar_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BotonReiniciar" to="." method="_on_boton_reiniciar_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BotonMenuPrincipal" to="." method="_on_boton_menu_principal_pressed"]

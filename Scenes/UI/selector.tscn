@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://5xbkoaatsajr"]
+
+[ext_resource type="Script" uid="uid://bfn0wf4lo2uhe" path="res://Script/selector.gd" id="1_q57ui"]
+[ext_resource type="Texture2D" uid="uid://bhpbkq4dbmeby" path="res://Imagenes/Fondo_inicio.png" id="2_adbok"]
+[ext_resource type="FontFile" uid="uid://d3l2q6rie48od" path="res://fuente/Silkscreen-Bold.ttf" id="3_p3vsr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q57ui"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Selector" type="Control" unique_id=460741755]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q57ui")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1680910550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_adbok")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=162430016]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.5
+offset_top = -32.5
+offset_right = 430.5
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2057700109]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BotonNivelPrueba" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=545341314]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_p3vsr")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q57ui")
+text = "tutorial"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=376638229]
+layout_mode = 2
+
+[node name="BotonNivel1" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1240843354]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_p3vsr")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q57ui")
+disabled = true
+text = "NIVEL 1"
+
+[node name="BotonNivel2" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1881915159]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_p3vsr")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q57ui")
+disabled = true
+text = "NIVEL 2"
+
+[node name="BotonNivel3" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=580880551]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_p3vsr")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q57ui")
+disabled = true
+text = "NIVEL 3"
+
+[node name="BotonAtras" type="Button" parent="." unique_id=1281469241]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 94.0
+offset_bottom = 84.0
+size_flags_horizontal = 3
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_p3vsr")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_q57ui")
+text = "<"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/BotonNivelPrueba" to="." method="_on_boton_nivel_prueba_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/BotonNivel1" to="." method="_on_boton_nivel_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/BotonNivel2" to="." method="_on_boton_nivel_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/BotonNivel3" to="." method="_on_boton_nivel_3_pressed"]
+[connection signal="pressed" from="BotonAtras" to="." method="_on_boton_atras_pressed"]

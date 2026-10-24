@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://ukuv7whqsnav"]
+
+[ext_resource type="PackedScene" uid="uid://bs2t16bh4mq7x" path="res://Scenes/Entidades/Jugador.tscn" id="1_5eqfm"]
+[ext_resource type="Script" uid="uid://dlkvh76x27i1f" path="res://Script/interfaz.gd" id="2_8c3pd"]
+[ext_resource type="PackedScene" uid="uid://cm062phea6abi" path="res://Scenes/Entidades/camarilla.tscn" id="2_u81yv"]
+[ext_resource type="PackedScene" uid="uid://bxrk7g5d24n0" path="res://Scenes/UI/MenuPausa.tscn" id="3_mp8ln"]
+[ext_resource type="Texture2D" uid="uid://bqx1nibdiaol6" path="res://Imagenes/Corazon.png" id="4_rhp6p"]
+[ext_resource type="FontFile" uid="uid://b367py5dtmh1r" path="res://fuente/Silkscreen-Regular.ttf" id="5_ndxt6"]
+[ext_resource type="Script" uid="uid://dsm2m01pxrx2d" path="res://Script/contadores.gd" id="6_08s3e"]
+[ext_resource type="Script" uid="uid://cx7jan12ei2d0" path="res://Script/mini_mapa.gd" id="6_da4bc"]
+[ext_resource type="Script" uid="uid://ckta6i88vnu3n" path="res://Script/limite_caida.gd" id="8_u81yv"]
+[ext_resource type="PackedScene" uid="uid://f1wh1f7bq6p8" path="res://Scenes/Entidades/Llave.tscn" id="9_ra6u4"]
+[ext_resource type="PackedScene" uid="uid://dnk062prm82yj" path="res://Scenes/Entidades/salida.tscn" id="10_2siu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5jrm"]
+size = Vector2(178, 165.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xekx"]
+size = Vector2(282.5, 231.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra6u4"]
+size = Vector2(26431, 2412)
+
+[node name="Nivel1" type="Node2D" unique_id=1068634979]
+
+[node name="Jugador" parent="." unique_id=624608330 instance=ExtResource("1_5eqfm")]
+
+[node name="Camera2D" parent="Jugador" unique_id=1596161595 instance=ExtResource("2_u81yv")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=817033187]
+position = Vector2(-1, 0)
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=655398449]
+position = Vector2(461.58112, -103.317635)
+scale = Vector2(6.3918824, 5.1139708)
+polygon = PackedVector2Array(213.41231, 97.9655, 211.41231, 29.9655, -134.58769, 30.9655, -134.58769, 97.9655)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1514715204]
+polygon = PackedVector2Array(-1073, -160, -1073, -69, -643, -69, -643, -160)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1295733545]
+position = Vector2(0, -67.9664)
+scale = Vector2(1, 0.710041)
+polygon = PackedVector2Array(-1127, -440.00436, -1130, -562.0044, -1597, -562.0044, -1597, -440.00436)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=651280105]
+position = Vector2(227.7498, 1079.9397)
+scale = Vector2(1.5178571, 2.3663204)
+polygon = PackedVector2Array(-641, -884, -644, -812, 1730.2356, -811.78345, 1728.918, -884.8927, 324.9649, -884.04755, 324.96484, -1052.208, 2940.4946, -1051.8186, 2940.4946, -1146.0577, 324.9649, -1145.2125, 157.62367, -1145.2125, 157.62367, -884.04755, -88.26404, -883.99994, -88.11752, -1035.3373, -189.57635, -1035.3373, -189.57983, -883.99994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2078857689]
+position = Vector2(3346, -453)
+shape = SubResource("RectangleShape2D_b5jrm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=547559961]
+position = Vector2(5743, -1055)
+shape = SubResource("RectangleShape2D_b5jrm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=573393958]
+position = Vector2(4134, -562)
+shape = SubResource("RectangleShape2D_3xekx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1056577217]
+position = Vector2(5296, -454)
+shape = SubResource("RectangleShape2D_3xekx")
+
+[node name="Interfaz" type="CanvasLayer" parent="." unique_id=2038539146 groups=["interfaz"]]
+script = ExtResource("2_8c3pd")
+
+[node name="MenuPausa" parent="Interfaz" unique_id=1776859001 instance=ExtResource("3_mp8ln")]
+
+[node name="Corazones" type="HBoxContainer" parent="Interfaz" unique_id=2118583481]
+offset_right = 266.0
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Corazon1" type="TextureRect" parent="Interfaz/Corazones" unique_id=1539002640]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("4_rhp6p")
+expand_mode = 1
+
+[node name="Corazon2" type="TextureRect" parent="Interfaz/Corazones" unique_id=1931745783]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("4_rhp6p")
+expand_mode = 1
+
+[node name="Corazon3" type="TextureRect" parent="Interfaz/Corazones" unique_id=516796542]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("4_rhp6p")
+expand_mode = 1
+
+[node name="Corazon4" type="TextureRect" parent="Interfaz/Corazones" unique_id=1188375710]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("4_rhp6p")
+expand_mode = 1
+
+[node name="Corazon5" type="TextureRect" parent="Interfaz/Corazones" unique_id=627570167]
+custom_minimum_size = Vector2(50, 50)
+propagate_maximum_size = true
+layout_mode = 2
+texture = ExtResource("4_rhp6p")
+expand_mode = 1
+
+[node name="Contadores" type="Control" parent="Interfaz" unique_id=303211490]
+layout_mode = 3
+anchor_bottom = 0.169
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 197.0
+offset_bottom = -7.512001
+script = ExtResource("6_08s3e")
+
+[node name="LabelCristales" type="Label" parent="Interfaz/Contadores" unique_id=843711155]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("5_ndxt6")
+theme_override_font_sizes/font_size = 25
+text = "cristales 0/10"
+
+[node name="LabelLlaves" type="Label" parent="Interfaz/Contadores" unique_id=1219448349]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 176.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("5_ndxt6")
+theme_override_font_sizes/font_size = 25
+text = "llaves 0/2"
+
+[node name="MiniMapa" type="Control" parent="Interfaz/Contadores" unique_id=922510097 node_paths=PackedStringArray("jugador")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 767.0
+offset_top = -48.0
+offset_right = 953.0
+offset_bottom = 79.0
+grow_horizontal = 0
+script = ExtResource("6_da4bc")
+jugador = NodePath("../../../Jugador")
+
+[node name="PuntoJugador" type="ColorRect" parent="Interfaz/Contadores/MiniMapa" unique_id=1847975613]
+layout_mode = 0
+offset_right = 6.0
+offset_bottom = 6.0
+color = Color(0.76025516, 0, 0.0067841257, 1)
+
+[node name="VistaMapa" type="SubViewportContainer" parent="Interfaz/Contadores/MiniMapa" unique_id=999332100]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 120.0
+
+[node name="SubViewport" type="SubViewport" parent="Interfaz/Contadores/MiniMapa/VistaMapa" unique_id=421078370]
+handle_input_locally = false
+size = Vector2i(180, 120)
+render_target_update_mode = 4
+
+[node name="CamaraMinimapa" type="Camera2D" parent="Interfaz/Contadores/MiniMapa/VistaMapa/SubViewport" unique_id=924620263]
+position = Vector2(-644, 3)
+
+[node name="LimiteCaida" type="Area2D" parent="." unique_id=5111501]
+position = Vector2(2, 6)
+collision_layer = 32
+script = ExtResource("8_u81yv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimiteCaida" unique_id=480473580]
+visible = false
+position = Vector2(10, 2191)
+shape = SubResource("RectangleShape2D_ra6u4")
+
+[node name="Llaves" type="Node2D" parent="." unique_id=1910352986]
+position = Vector2(2, 6)
+
+[node name="Llave" parent="Llaves" unique_id=382785445 instance=ExtResource("9_ra6u4")]
+position = Vector2(241.99994, -1049)
+scale = Vector2(0.1, 0.1)
+
+[node name="Llave2" parent="Llaves" unique_id=931948148 instance=ExtResource("9_ra6u4")]
+position = Vector2(-247, 9)
+scale = Vector2(0.1, 0.1)
+
+[node name="Salida" parent="." unique_id=54096327 instance=ExtResource("10_2siu3")]
+position = Vector2(840, -1091)
+nivel_a_desbloquear = 2
