@@ -2,6 +2,7 @@
 extends Estado
 
 func entrar():
+	jugador.reproducir_animacion("idle")
 	jugador.velocity.x = 0.0
 
 func actualizar(delta: float):

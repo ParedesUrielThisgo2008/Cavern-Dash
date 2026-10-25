@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://duemnp1kbypl0"]
 
+[ext_resource type="Texture2D" uid="uid://6o0hukuaf520" path="res://Assets/suelo.jpeg" id="1_738em"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xekx"]
 size = Vector2(228, 223)
 
@@ -125,8 +127,9 @@ shape = SubResource("RectangleShape2D_87d6g")
 [node name="Polygon2D11" type="Polygon2D" parent="." unique_id=190130329]
 position = Vector2(-33096.11, -0.0009765624)
 scale = Vector2(4.0465975, 0.99999964)
-color = Color(0.9546811, 0.5227341, 0.5939425, 1)
+texture = ExtResource("1_738em")
 polygon = PackedVector2Array(10445.099, -3903.0005, 10444.357, -4522.0005, 10534.309, -4522.0005, 10533.814, -4390.0005, 10582.004, -4390.0005, 10580.768, -4261.0005, 10621.543, -4261.0005, 10620.555, -4143.0005, 10847.164, -4145.0005, 10847.164, -3900.0005)
+uv = PackedVector2Array(10445.099, -3903.0005, 10444.357, -4522.0005, 10534.309, -4522.0005, 10533.814, -4390.0005, 10582.004, -4390.0005, 10580.768, -4261.0005, 10621.543, -4261.0005, 10620.555, -4143.0005, 10847.164, -4145.0005, 10847.164, -3900.0005)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="." unique_id=1430229735]
 visible = false

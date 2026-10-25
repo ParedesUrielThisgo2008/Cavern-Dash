@@ -1,6 +1,9 @@
 
 extends Estado
 
+func entrar():
+	jugador.reproducir_animacion("caer")
+
 func actualizar(delta: float):
 	if jugador.is_on_floor():
 		if jugador.jump_buffer_timer > 0.0:
@@ -33,6 +36,9 @@ func actualizar(delta: float):
 		return
 
 	var direccion = Input.get_axis("izquierda", "derecha")
+	
+	if direccion != 0:
+		jugador.actualizar_direccion(direccion)
 
 	if direccion != 0.0:
 		jugador.ultima_direccion = direccion

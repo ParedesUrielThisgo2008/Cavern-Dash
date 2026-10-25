@@ -1,6 +1,9 @@
 
 extends Estado
 
+func entrar():
+	jugador.reproducir_animacion("caminar")
+
 func actualizar(delta: float):
 	if not jugador.is_on_floor():
 		jugador.maquina_estados.cambiar_estado("caer")
@@ -15,6 +18,11 @@ func actualizar(delta: float):
 		return
 
 	var direccion = Input.get_axis("izquierda", "derecha")
+	
+	if direccion != 0:
+		jugador.actualizar_direccion(direccion)
+		
+	jugador.velocity.x = direccion * jugador.VELOCIDAD
 
 	if direccion == 0.0:
 		jugador.maquina_estados.cambiar_estado("idle")

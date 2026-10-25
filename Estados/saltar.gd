@@ -6,6 +6,7 @@ var direccion_salto: float = 1.0
 var velocidad_dash: float = 0.0
 
 func entrar():
+	jugador.reproducir_animacion("saltar")
 	if jugador.saltos_disponibles <= 0:
 		jugador.maquina_estados.cambiar_estado("caer")
 		return
@@ -31,6 +32,9 @@ func actualizar(delta: float):
 		jugador.velocity.x = velocidad_dash
 	else:
 		var direccion = Input.get_axis("izquierda", "derecha")
+		
+		if direccion != 0:
+			jugador.actualizar_direccion(direccion)
 
 		if direccion != 0.0:
 			jugador.ultima_direccion = direccion

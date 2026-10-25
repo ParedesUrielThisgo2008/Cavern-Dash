@@ -9,6 +9,8 @@ func entrar():
 	# Impulso horizontal contrario a la pared
 	var normal_pared = jugador.get_wall_normal()
 	jugador.velocity.x = normal_pared.x * IMPULSO_PARED
+	
+	jugador.actualizar_direccion(signf(jugador.velocity.x))
 
 func actualizar(delta: float):
 	# No permitir que el movimiento normal cancele

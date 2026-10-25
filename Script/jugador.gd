@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var maquina_estados: MaquinaEstados = $MaquinaEstados
 @onready var interfaz = get_tree().get_first_node_in_group("interfaz_vida")
+@onready var animacion: AnimatedSprite2D = $AnimatedSprite2D
 
 const VELOCIDAD: float = 900.0
 const GRAVEDAD: float = 1200.0
@@ -23,7 +24,19 @@ var tiempo_doble_pulsacion: float = 0.3
 var tiempo_ultima_pulsacion: float = 0.0
 var ultima_tecla: String = ""
 
+func reproducir_animacion(nombre: String):
+	if animacion.animation != nombre:
+		animacion.play(nombre)
+		
+func actualizar_direccion(direccion: float):
+	if direccion > 0:
+		animacion.flip_h = false
+	elif direccion < 0:
+		animacion.flip_h = true
+
 func _ready():
+	animacion.flip_h = true
+	
 	maquina_estados.inicializar(self)
 
 func _physics_process(delta: float):

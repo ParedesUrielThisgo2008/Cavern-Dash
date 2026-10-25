@@ -6,7 +6,9 @@ extends Estado
 var direccion_dash: float = 1.0
 
 func entrar():
+	jugador.reproducir_animacion("correr")
 	direccion_dash = jugador.ultima_direccion
+	jugador.actualizar_direccion(direccion_dash)
 
 func actualizar(delta: float):
 	
