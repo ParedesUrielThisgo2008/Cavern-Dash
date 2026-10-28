@@ -101,22 +101,28 @@ func detectar_dash():
 		)
 
 func recibir_daño(cantidad: int):
+	if vida_actual <= 0:
+		return
+
 	vida_actual -= cantidad
 	vida_actual = max(vida_actual, 0)
 
 	if interfaz != null:
-		interfaz.actualizar_vida(vida_actual)
+		if interfaz.has_method("actualizar_vida"):
+			interfaz.actualizar_vida(vida_actual)
+		else:
+			print("Error: la interfaz no tiene actualizar_vida()")
+	else:
+		print("Error: no se encontró la interfaz de vida")
 
 	if vida_actual <= 0:
-		interfaz.morir()
+		morir()
 
 func morir():
 	print("El jugador murió")
 
-	var ruta = "res://Scenes/game_over.tscn"
+	var ruta = "res://Scenes/UI/game_over.tscn"
 	var error = get_tree().change_scene_to_file(ruta)
 
 	if error != OK:
 		print("Error al cambiar de escena: ", error)
-
-	print("Resultado del cambio de escena: ", error)

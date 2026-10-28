@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://w8qd4t1bkyno" path="res://Script/jugador.gd" id="1_5jqxn"]
 [ext_resource type="Script" uid="uid://53cbu8dr3vsb" path="res://Estados/idle.gd" id="2_5jqxn"]
 [ext_resource type="Texture2D" uid="uid://csddf1dnd0coj" path="res://Assets/individual_sheets/male_hero-walk.png" id="2_ahek1"]
-[ext_resource type="Texture2D" uid="uid://djpdapnlbdvms" path="res://Assets/individual_sheets/male_hero-fall.png" id="2_fp7ge"]
+[ext_resource type="Texture2D" uid="uid://dbtxtoh7nhjkh" path="res://Assets/male_hero_free (1)/individual_sheets/male_hero-fall.png" id="2_fp7ge"]
 [ext_resource type="Script" uid="uid://d3k2hc5acxm7k" path="res://Estados/maquina_estados.gd" id="2_m531v"]
 [ext_resource type="Texture2D" uid="uid://djm0ljkwavocg" path="res://Assets/individual_sheets/male_hero-run.png" id="3_fp7ge"]
 [ext_resource type="Script" uid="uid://bldncxxwt8wvm" path="res://Estados/caminar.gd" id="3_na3lr"]
@@ -29,6 +29,22 @@ atlas = ExtResource("2_fp7ge")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_643xq"]
+atlas = ExtResource("2_fp7ge")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdcyw"]
+atlas = ExtResource("2_fp7ge")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mgyk"]
+atlas = ExtResource("2_fp7ge")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4bky"]
+atlas = ExtResource("2_fp7ge")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjbf8"]
 atlas = ExtResource("2_fp7ge")
 region = Rect2(384, 0, 128, 128)
 
@@ -381,6 +397,23 @@ animations = [{
 }],
 "loop": 1,
 "name": &"caer",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdcyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mgyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4bky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjbf8")
+}],
+"loop": 1,
+"name": &"caer_rapido",
 "speed": 5.0
 }, {
 "frames": [{
@@ -416,7 +449,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"caminar",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -451,7 +484,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"correr",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -655,7 +688,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"saltar",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fp7ge"]
@@ -667,19 +700,21 @@ collision_mask = 26
 script = ExtResource("1_5jqxn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1245061450]
+texture_filter = 1
 position = Vector2(0, 1.3780012)
 scale = Vector2(2, 2.385)
 sprite_frames = SubResource("SpriteFrames_3xekx")
-animation = &"idle"
+animation = &"caer_rapido"
 autoplay = "idle"
-frame_progress = 0.9101307
+frame_progress = 0.3055957
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028327657 groups=["jugador"]]
 visible = false
 shape = SubResource("CapsuleShape2D_fp7ge")
 
-[node name="MaquinaEstados" type="Node" parent="." unique_id=651645168]
+[node name="MaquinaEstados" type="Node" parent="." unique_id=651645168 node_paths=PackedStringArray("estado_inicial")]
 script = ExtResource("2_m531v")
+estado_inicial = NodePath("idle")
 
 [node name="idle" type="Node" parent="MaquinaEstados" unique_id=1705214906]
 script = ExtResource("2_5jqxn")

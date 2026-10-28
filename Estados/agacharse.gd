@@ -4,6 +4,7 @@ extends Estado
 @export var velocidad_caida: float = 1200.0
 
 func entrar():
+	jugador.reproducir_animacion("caer_rapido")
 	pass
 
 func actualizar(delta: float):

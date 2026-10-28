@@ -3,6 +3,7 @@ extends Estado
 const IMPULSO_PARED: float = 350.0
 
 func entrar():
+	jugador.reproducir_animacion("saltar")
 	# Impulso vertical
 	jugador.velocity.y = jugador.FUERZA_SALTO
 

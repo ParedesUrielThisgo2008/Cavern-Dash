@@ -148,6 +148,51 @@ render_target_update_mode = 4
 position = Vector2(-963, 0)
 zoom = Vector2(0.1, 0.1)
 
+[node name="Instrucciones" type="Label" parent="Interfaz" unique_id=364767463]
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 512.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("9_ua1ij")
+theme_override_font_sizes/font_size = 24
+text = "Movimientos:
+q/e: caminar
+Espacio: Saltar"
+
+[node name="Instrucciones2" type="Label" parent="Interfaz" unique_id=115652894]
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 777.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("9_ua1ij")
+theme_override_font_sizes/font_size = 24
+text = "Movimientos:
+doble pulsacion: correr
+doble espacio: doble salto
+pared + espacio: salto pared
+"
+
+[node name="Instrucciones3" type="Label" parent="Interfaz" unique_id=1635079809]
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 777.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("9_ua1ij")
+theme_override_font_sizes/font_size = 24
+text = "Movimientos:
+w: caer rapido
+"
+
+[node name="Instrucciones4" type="Label" parent="Interfaz" unique_id=1287263137]
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 777.0
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("9_ua1ij")
+theme_override_font_sizes/font_size = 24
+text = "ESC: pausa
+"
+
 [node name="Enemigo" parent="." unique_id=432612501 instance=ExtResource("8_57iff")]
 position = Vector2(1829, -2315)
 
@@ -182,11 +227,11 @@ position = Vector2(0, 10)
 
 [node name="Llave" parent="Llaves" unique_id=382785445 instance=ExtResource("12_w8oxd")]
 position = Vector2(-9496, -1902)
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.1, 0.1)
 
 [node name="Llave2" parent="Llaves" unique_id=83893882 instance=ExtResource("12_w8oxd")]
-position = Vector2(10681, -2240)
-scale = Vector2(0.15, 0.15)
+position = Vector2(12045, -3744)
+scale = Vector2(0.1, 0.1)
 
 [node name="Salida" parent="Llaves" unique_id=54096327 instance=ExtResource("13_ua1ij")]
 position = Vector2(9169, -4078)

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://ckta6i88vnu3n" path="res://Script/limite_caida.gd" id="8_u81yv"]
 [ext_resource type="PackedScene" uid="uid://f1wh1f7bq6p8" path="res://Scenes/Entidades/Llave.tscn" id="9_ra6u4"]
 [ext_resource type="PackedScene" uid="uid://dnk062prm82yj" path="res://Scenes/Entidades/salida.tscn" id="10_2siu3"]
+[ext_resource type="PackedScene" uid="uid://b5tshcmd4pcil" path="res://Scenes/Entidades/enemigo.tscn" id="12_w7kfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5jrm"]
 size = Vector2(178, 165.75)
@@ -65,7 +66,7 @@ shape = SubResource("RectangleShape2D_3xekx")
 position = Vector2(5296, -454)
 shape = SubResource("RectangleShape2D_3xekx")
 
-[node name="Interfaz" type="CanvasLayer" parent="." unique_id=2038539146 groups=["interfaz"]]
+[node name="Interfaz" type="CanvasLayer" parent="." unique_id=2038539146 groups=["interfaz_vida"]]
 script = ExtResource("2_8c3pd")
 
 [node name="MenuPausa" parent="Interfaz" unique_id=1776859001 instance=ExtResource("3_mp8ln")]
@@ -194,3 +195,6 @@ scale = Vector2(0.1, 0.1)
 [node name="Salida" parent="." unique_id=54096327 instance=ExtResource("10_2siu3")]
 position = Vector2(840, -1091)
 nivel_a_desbloquear = 2
+
+[node name="Enemigo" parent="." unique_id=432612501 instance=ExtResource("12_w7kfu")]
+position = Vector2(1604, -2156)

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bs2t16bh4mq7x" path="res://Scenes/Entidades/Jugador.tscn" id="1_yco5e"]
 [ext_resource type="PackedScene" uid="uid://cm062phea6abi" path="res://Scenes/Entidades/camarilla.tscn" id="2_2260h"]
+[ext_resource type="PackedScene" uid="uid://b5tshcmd4pcil" path="res://Scenes/Entidades/enemigo.tscn" id="3_ophry"]
 [ext_resource type="Script" uid="uid://dlkvh76x27i1f" path="res://Script/interfaz.gd" id="3_x7ibj"]
 [ext_resource type="PackedScene" uid="uid://bxrk7g5d24n0" path="res://Scenes/UI/MenuPausa.tscn" id="4_0x2n2"]
 [ext_resource type="Texture2D" uid="uid://bqx1nibdiaol6" path="res://Imagenes/Corazon.png" id="5_jtsaq"]
@@ -93,7 +94,10 @@ polygon = PackedVector2Array(5185, -3256, 5185, -3381, 5481.64, -3381.0002, 5482
 position = Vector2(5031, -1086)
 shape = SubResource("RectangleShape2D_q22fj")
 
-[node name="Interfaz" type="CanvasLayer" parent="." unique_id=1437892324 groups=["interfaz"]]
+[node name="Enemigo" parent="StaticBody2D" unique_id=432612501 instance=ExtResource("3_ophry")]
+position = Vector2(3405, -2852)
+
+[node name="Interfaz" type="CanvasLayer" parent="." unique_id=1437892324 groups=["interfaz_vida"]]
 script = ExtResource("3_x7ibj")
 
 [node name="MenuPausa" parent="Interfaz" unique_id=1776859001 instance=ExtResource("4_0x2n2")]
@@ -212,7 +216,7 @@ shape = SubResource("RectangleShape2D_hfm3l")
 position = Vector2(2, 6)
 
 [node name="Llave" parent="Llaves" unique_id=382785445 instance=ExtResource("10_ophry")]
-position = Vector2(163, -3500.9998)
+position = Vector2(185, -3434.0002)
 scale = Vector2(0.1, 0.1)
 
 [node name="Llave2" parent="Llaves" unique_id=1460801840 instance=ExtResource("10_ophry")]
